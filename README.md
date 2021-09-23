@@ -12,4 +12,4 @@ Please submit an issue with an image or .obj file of a "wanted" source/model.
 
 | Model Name | Source | Description |
 |------------|--------|-------------|
-| [Stanford Bunny](bunny/bunny.off) | [Stanford University](http://graphics.stanford.edu/data/3Dscanrep/) | [OFF file](https://en.wikipedia.org/wiki/OFF_(file_format) with 35947 points in 3d and 69451 triangles |
+| [Stanford Bunny](bunny/bunny.off) | [Stanford University](http://graphics.stanford.edu/data/3Dscanrep/) | [OFF file](https://en.wikipedia.org/wiki/OFF_(file_format)) with 35947 points in 3d and 69451 triangles |
