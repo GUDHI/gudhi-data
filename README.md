@@ -2,9 +2,7 @@
 
 These datasets are used as examples, for benchmark purposes and in gudhi python data fetch methods.
 
-Do not hesitate to submit a pull request with new model data and sources!
-
-Please submit an issue with an image or .obj file of a "wanted" source/model.
+Do not hesitate to submit a pull request with new model data and sources or to submit an issue of a "wanted" dataset.
 
 ## License
 
