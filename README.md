@@ -1,6 +1,6 @@
 # gudhi-data
 
-These datasets are used as examples, or for benchmark purposes and in gudhi python data fetch methods.
+These datasets are used as examples, for benchmark purposes and in gudhi python data fetch methods.
 
 Do not hesitate to submit a pull request with new model data and sources!
 
