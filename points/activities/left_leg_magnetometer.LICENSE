@@ -1,2 +1,0 @@
-The 'daily and sports activities' dataset comes from the UC Irvine Machine Learning Repository https://archive-beta.ics.uci.edu/ml/datasets/daily+and+sports+activities and has been converted to a single csv file after some filterings (cf. data_selecta.py).
-Please read carefully the terms of use of this dataset (in the above link) before using it.

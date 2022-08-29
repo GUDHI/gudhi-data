@@ -1,0 +1,3 @@
+The 'daily and sports activities' dataset comes from the UC Irvine Machine Learning Repository https://archive-beta.ics.uci.edu/ml/datasets/daily+and+sports+activities
+and has been concatinated in a Pandas DataFrame pickle file compressed in a `xz` format (cf. data_selecta.py).
+Please read carefully the terms of use of this dataset (in the above link) before using it.
