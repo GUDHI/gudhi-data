@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 #
-# This program requires to launch data from https://archive-beta.ics.uci.edu/ml/datasets/daily+and+sports+activities
+# This program requires to load data from https://archive-beta.ics.uci.edu/dataset/256/daily+and+sports+activities
 # Unzip the data and copy data_selecta.py in a same directory data folder
 # Launch 'python data_selecta.py'
 #

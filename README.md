@@ -17,4 +17,4 @@ For instance, [Stanford bunny LICENSE](points/bunny/LICENSE) applies to [Stanfor
 |------------|--------|-------------|
 | [Stanford bunny](points/bunny/bunny.off) | [Stanford University](http://graphics.stanford.edu/data/3Dscanrep/) | [OFF file](https://en.wikipedia.org/wiki/OFF_(file_format)) with 35947 points in 3d and 69451 triangles |
 | [Spiral 2D](points/spiral_2d/spiral_2d.csv) | Generated within GUDHI | CSV file with 114562 points in 2d |
-| [Daily and sports activities](points/activities/activities.xz) | [UC Irvine ML repository](https://archive-beta.ics.uci.edu/ml/datasets/daily+and+sports+activities) | Pandas DataFrame pickle file compressed in a `xz` format |
+| [Daily and sports activities](points/activities/activities.xz) | [UC Irvine ML repository](https://archive-beta.ics.uci.edu/dataset/256/daily+and+sports+activities) | Pandas DataFrame pickle file compressed in a `xz` format |
