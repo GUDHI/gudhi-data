@@ -1,10 +1,12 @@
 import os
 import pandas as pd
+import numpy as np
 
 #
 # This program requires to load data from https://archive-beta.ics.uci.edu/dataset/256/daily+and+sports+activities
 # Unzip the data and copy data_selecta.py in a same directory data folder
 # Launch 'python data_selecta.py'
+# Generated with Python 3.8 / Pandas 1.1.0
 #
 
 # Will be auto-saved as a xz compressed pickle file
@@ -51,3 +53,22 @@ for activity in sorted(os.listdir(activity_path)):
 df = pd.concat(df_list)
 df = df.reset_index(drop=True)
 df.to_pickle(result_file)
+
+# Select personn 1 and Left Leg Magnetometer
+p1_left_leg = df[df['individual'] == 'p1'][['LL_xmag', 'LL_ymag', 'LL_zmag', 'activity']]
+
+cross_training_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a14'].drop(columns=['activity']).to_numpy()
+with open('cross_training_p1_left_leg.npy', 'wb') as f:
+    np.save(f, cross_training_p1_left_leg)
+
+jumping_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a18'].drop(columns=['activity']).to_numpy()
+with open('jumping_p1_left_leg.npy', 'wb') as f:
+    np.save(f, jumping_p1_left_leg)
+
+stepper_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a13'].drop(columns=['activity']).to_numpy()
+with open('stepper_p1_left_leg.npy', 'wb') as f:
+    np.save(f, stepper_p1_left_leg)
+
+walking_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a09'].drop(columns=['activity']).to_numpy()
+with open('walking_p1_left_leg.npy', 'wb') as f:
+    np.save(f, walking_p1_left_leg)
