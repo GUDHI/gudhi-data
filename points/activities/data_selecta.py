@@ -10,7 +10,7 @@ import numpy as np
 #
 
 # Will be auto-saved as a xz compressed pickle file
-result_file = 'activities.xz'
+result_file = 'activities.csv.xz'
 
 try:
     os.remove(result_file)
@@ -52,7 +52,7 @@ for activity in sorted(os.listdir(activity_path)):
 
 df = pd.concat(df_list)
 df = df.reset_index(drop=True)
-df.to_pickle(result_file)
+df.to_csv(result_file)
 
 # Select personn 1 and Left Leg Magnetometer
 p1_left_leg = df[df['individual'] == 'p1'][['LL_xmag', 'LL_ymag', 'LL_zmag', 'activity']]
