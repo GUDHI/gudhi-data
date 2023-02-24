@@ -57,18 +57,19 @@ df.to_csv(result_file)
 # Select personn 1 and Left Leg Magnetometer
 p1_left_leg = df[df['individual'] == 'p1'][['LL_xmag', 'LL_ymag', 'LL_zmag', 'activity']]
 
-cross_training_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a14'].drop(columns=['activity']).to_numpy()
-with open('cross_training_p1_left_leg.npy', 'wb') as f:
-    np.save(f, cross_training_p1_left_leg)
+# Filter cross_training, jumping, stepper and walking
+p1_left_leg_filter = (p1_left_leg['activity'] == 'a14') | (p1_left_leg['activity'] == 'a18') | (p1_left_leg['activity'] == 'a13') | (p1_left_leg['activity'] == 'a09')
+p1_left_leg = p1_left_leg[p1_left_leg_filter]
 
-jumping_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a18'].drop(columns=['activity']).to_numpy()
-with open('jumping_p1_left_leg.npy', 'wb') as f:
-    np.save(f, jumping_p1_left_leg)
+# More verbose activity - bigger files, but ok
+p1_left_leg[p1_left_leg == 'a09'] = 'walking'
+p1_left_leg[p1_left_leg == 'a13'] = 'stepper'
+p1_left_leg[p1_left_leg == 'a18'] = 'jumping'
+p1_left_leg[p1_left_leg == 'a14'] = 'cross_training'
 
-stepper_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a13'].drop(columns=['activity']).to_numpy()
-with open('stepper_p1_left_leg.npy', 'wb') as f:
-    np.save(f, stepper_p1_left_leg)
+# Save as a numpy array
+with open('activities_p1_left_leg.npy', 'wb') as f:
+    np.save(f, p1_left_leg.to_numpy())
 
-walking_p1_left_leg = p1_left_leg[p1_left_leg['activity'] == 'a09'].drop(columns=['activity']).to_numpy()
-with open('walking_p1_left_leg.npy', 'wb') as f:
-    np.save(f, walking_p1_left_leg)
+# Save as a csv
+p1_left_leg.to_csv('activities_p1_left_leg.csv', header=None)
