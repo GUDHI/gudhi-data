@@ -61,6 +61,12 @@ p1_left_leg = df[df['individual'] == 'p1'][['LL_xmag', 'LL_ymag', 'LL_zmag', 'ac
 p1_left_leg_filter = (p1_left_leg['activity'] == 'a14') | (p1_left_leg['activity'] == 'a18') | (p1_left_leg['activity'] == 'a13') | (p1_left_leg['activity'] == 'a09')
 p1_left_leg = p1_left_leg[p1_left_leg_filter]
 
+# More verbose activity - bigger files, but ok
+p1_left_leg[p1_left_leg == 'a09'] = 'walking'
+p1_left_leg[p1_left_leg == 'a13'] = 'stepper'
+p1_left_leg[p1_left_leg == 'a18'] = 'jumping'
+p1_left_leg[p1_left_leg == 'a14'] = 'cross_training'
+
 # Save as a numpy array
 with open('activities_p1_left_leg.npy', 'wb') as f:
     np.save(f, p1_left_leg.to_numpy())
