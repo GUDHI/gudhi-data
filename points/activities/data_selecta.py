@@ -61,17 +61,19 @@ p1_left_leg = df[df['individual'] == 'p1'][['LL_xmag', 'LL_ymag', 'LL_zmag', 'ac
 p1_left_leg_filter = (p1_left_leg['activity'] == 'a14') | (p1_left_leg['activity'] == 'a18') | (p1_left_leg['activity'] == 'a13') | (p1_left_leg['activity'] == 'a09')
 p1_left_leg = p1_left_leg[p1_left_leg_filter]
 
-# More verbose activity - bigger files, but ok
-p1_left_leg['activity'] = p1_left_leg['activity'].replace(['a09', 'a13', 'a18', 'a14'],
-                                                          ['walking', 'stepper', 'jumping', 'cross_training'])
+# Downgrade float64 to float32
+p1_left_leg['LL_xmag'] = p1_left_leg['LL_xmag'].astype('<f4')
+p1_left_leg['LL_ymag'] = p1_left_leg['LL_ymag'].astype('<f4')
+p1_left_leg['LL_zmag'] = p1_left_leg['LL_zmag'].astype('<f4')
 
-records = p1_left_leg.to_records(index=False)
-p1_left_leg_np = np.array(records, dtype = [('LL_xmag', '<f4'), ('LL_ymag', '<f4'), ('LL_zmag', '<f4'),
-                                            ('activity', '<U15')]) # Force activity as a string of length 15 (or less)
+# Save as a csv
+p1_left_leg.to_csv('activities_p1_left_leg.csv', index=False, header=None)
+
+# Replace activity (string) to a float. Thiss will enable the numpy array to be of type float32
+p1_left_leg['activity'] = p1_left_leg['activity'].replace(['a09', 'a13', 'a18', 'a14'],
+                                                          [   9.,   13.,   18.,   14.])
+p1_left_leg['activity'] = p1_left_leg['activity'].astype('<f4')
 
 # Save as a numpy array
 with open('activities_p1_left_leg.npy', 'wb') as f:
-    np.save(f, p1_left_leg_np)
-
-# Save as a csv
-p1_left_leg.to_csv('activities_p1_left_leg.csv', header=None)
+    np.save(f, p1_left_leg.to_numpy(dtype='float32'))
