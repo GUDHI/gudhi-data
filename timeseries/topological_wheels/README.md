@@ -13,6 +13,6 @@ dataset = pd.read_csv(path_to_file, header=0, index_col=0, compression='gzip')
 X, y = dataset.iloc[:, :-1], dataset.iloc[:, -1]
 
 # numpy
-dataset = np.genfromtxt(path_to_file / file, delimiter=',', skip_header=1)
+dataset = np.genfromtxt(path_to_file, delimiter=',', skip_header=1)
 X, y = dataset[:, 1:-1], dataset[:, -1]
 ```
