@@ -24,4 +24,4 @@ For instance, [Stanford bunny LICENSE](points/bunny/LICENSE) applies to [Stanfor
 
 | Model Name | Source | Description                                                                                                                                                                           |
 |------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![Topological Wheels](timeseries/topological-wheels/tw-data-annotated.png) | [DataShape](https://www.inria.fr/fr/datashape) | 10 CSV files where each file has 64 timeseries over 10000 timestamps each, and a $y$ ground truth indicating anomalous regime. See [README](timeseries/topological-wheels/README.md). |
+| [Topological Wheels](timeseries/topological-wheels/tw-data-annotated.png) | [DataShape](https://www.inria.fr/fr/datashape) | 10 CSV files where each file has 64 timeseries over 10000 timestamps each, and a $y$ ground truth indicating anomalous regime. See [README](timeseries/topological-wheels/README.md). |
